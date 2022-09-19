@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Header from "./Header";
+import AmiiboContainer from "./AmiiboContainer";
+import { Route, Switch} from 'react-router-dom';
 
-function App() {
+const App = () => {
+  const [amiibos, setAmiibos] = useState([])
+  const [favoriteList, setFavoriteList] = useState([])
+
+  const getAmiiboData = () => {
+    fetch('https://www.amiiboapi.com/api/amiibo/')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data.amiibo)
+      setAmiibos(data.amiibo)
+    })
+  }
+
+  useEffect(() => {
+    getAmiiboData()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+      <Switch>
+        <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos}/>}/>
+      </Switch>
     </div>
-  );
+  )
 }
 
 export default App;

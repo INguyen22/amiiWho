@@ -1,0 +1,14 @@
+.form-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+}
+
+form {
+    display: flex;
+    height: 30px;
+}
+
+input {
+    width: 150px;
+}

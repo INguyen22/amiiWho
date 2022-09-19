@@ -1,0 +1,13 @@
+.amiibo-image {
+    height: 300px;
+    width: 200px;
+}
+
+.star {
+    height: 40px;
+    width: 30px;
+}
+
+.amiibo-name-fav {
+    display: flex;
+}
