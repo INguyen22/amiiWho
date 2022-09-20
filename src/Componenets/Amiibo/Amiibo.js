@@ -1,6 +1,6 @@
 import React from "react";
 import "./Amiibo.css"
-import unFavoriteIcon from "./blackStar.png"
+import unFavoriteIcon from "../Images/blackStar.png"
 
 const Amiibo = ({image, name}) => {
     return (

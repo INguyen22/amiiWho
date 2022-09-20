@@ -1,6 +1,6 @@
 import React from "react";
-import blathers from "./blathers.png"
-import egad from "./Egad.png"
+import blathers from "../Images/blathers.png"
+import egad from "../Images/Egad.png"
 import "./AboutUs.css"
 
 const AboutUs = () => {
