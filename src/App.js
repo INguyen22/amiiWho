@@ -26,14 +26,14 @@ const App = () => {
   return (
     <div>
       <Header/>
-      <Switch>
+      {/* <Switch> */}
         <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos}/>}/>
         <Route exact path="/amiiWho/:amiiboTail" render={({match}) => {
             const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
             return <AmiiboDetails amiibo={foundAmiibo}/>}}/>
         <Route exact path="/amiiWho/myCollection" render={() => <UserCollection favoriteList={favoriteList}/>}/>
         <Route exact path="/amiiWho/AboutUs" render={() => <AboutUs/>}/>
-      </Switch>
+      {/* </Switch> */}
     </div>
   )
 }

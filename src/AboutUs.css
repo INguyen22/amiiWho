@@ -1,0 +1,9 @@
+.smart-peeps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+p, h2 {
+    padding: 10px;
+}
