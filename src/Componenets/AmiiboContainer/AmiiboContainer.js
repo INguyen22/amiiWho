@@ -1,7 +1,7 @@
 import React from "react";
 import "./AmiiboContainer.css"
-import Amiibo from "./Amiibo";
-import Form from "./Form";
+import Amiibo from "../Amiibo/Amiibo";
+import Form from "../Form/Form";
 
 const AmiiboContainer = ({amiiboData}) => {
     const series = amiiboData.map(amiibo => amiibo.amiiboSeries)

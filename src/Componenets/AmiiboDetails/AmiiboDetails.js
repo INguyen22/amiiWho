@@ -1,9 +1,9 @@
 import React from "react";
 
-const AmiiboDetails = () => {
+const AmiiboDetails = ({amiibo}) => {
     return (
         <div>
-
+            
         </div>
     )
 }
