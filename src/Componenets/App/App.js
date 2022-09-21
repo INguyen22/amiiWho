@@ -37,14 +37,27 @@ const App = () => {
     }
   }
 
+  const addToFavorites = (amiiboTail) => {
+    const favoriteAmiibo = amiibos.find(amiibo => amiibo.tail === amiiboTail)
+    // setFavoriteList([...favoriteList, favoriteAmiibo])
+    if(!favoriteList.includes(favoriteAmiibo)) {
+      favoriteList.push(favoriteAmiibo)
+    }
+    console.log('favcoite list: ', favoriteList)
+  }
+
   useEffect(() => {
     getAmiiboData()
   }, [])
 
+  useEffect(() => {
+    setFavoriteList(favoriteList)
+  }, [favoriteList])
+
   return (
     <div>
       <Header/>
-      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filter={filter}/>}/>
+      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites}/>}/>
       <Route exact path="/amiiWho/:amiiboTail" render={({match}) => {
           const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
           return <AmiiboDetails amiibo={foundAmiibo}/>}}/>
