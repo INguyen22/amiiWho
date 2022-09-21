@@ -14,7 +14,7 @@ const App = () => {
     fetch('https://www.amiiboapi.com/api/amiibo/')
     .then(res => res.json())
     .then(data => {
-      // console.log(data.amiibo)
+      //console.log(data.amiibo)
       setAmiibos(data.amiibo)
     })
   }

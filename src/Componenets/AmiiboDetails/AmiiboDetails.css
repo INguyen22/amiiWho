@@ -1,0 +1,20 @@
+.amiibo-details {
+    display: flex;
+    padding: 60px;
+    padding-top: 10px;
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.waddle-icon {
+    height: 60px;
+}

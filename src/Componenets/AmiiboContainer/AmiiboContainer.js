@@ -9,11 +9,12 @@ const AmiiboContainer = ({amiiboData, filter}) => {
         return series.indexOf(currentSeries) === index
     })
     const amiiboFigures = amiiboData.map(amiibo => {
-        const {image, name} = amiibo
+        const {image, name, tail} = amiibo
         return <Amiibo
             key={image}
             image={image}
             name={name}
+            tail={tail}
         />
     })
     return (
