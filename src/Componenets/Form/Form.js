@@ -1,35 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Form.css"
 
-const Form = ({uniqueSeries}) => {
-    const [amiiboName, setAmiiboName] = useState('')
-    const [amiiboSeries, setAmiiboSeries] = useState('')
+const Form = ({uniqueSeries, filter}) => {
+    const [amiiboName, setAmiiboName] = useState("")
+    const [amiiboSeries, setAmiiboSeries] = useState("")
 
     const seriesOptions = uniqueSeries.map(series => {
         return <option key={series} value={series}>{series}</option>
     })
 
-    const handleChange = (event) => {
-        const {value} = event.target
-        setAmiiboName(value)
-        setAmiiboSeries(value)
-    }
+    useEffect(() => {
+        filter(amiiboName, amiiboSeries)
+      }, [amiiboName])
+
+    useEffect(() => {
+        filter(amiiboName, amiiboSeries)
+    }, [amiiboSeries])
+
     return (
         <div className="form-container">
-            <form>
+            <form >
                 <input 
                     name="amiiboName"
                     value={amiiboName}
                     placeholder="Find Character By Name"
-                    onChange={handleChange}
+                    onChange={(event) => setAmiiboName(event.target.value)}
                 />
                 <select 
                     name="amiiboSeries"
                     value={amiiboSeries}
                     placeholder="Find Amiibos By Series"
-                    onChange={handleChange}
+                    onChange={(event) => setAmiiboSeries(event.target.value)}
                 >
-                    <option disabled value="">Find Amiibo By Series</option>
+                    <option value="">Find Amiibo By Series</option>
                         {seriesOptions}  
                 </select>
             </form>
