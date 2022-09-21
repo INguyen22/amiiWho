@@ -4,6 +4,7 @@ import waddleDee from "../Images/waddleDee.png"
 import { Link } from 'react-router-dom'
 
 const AmiiboDetails = ({amiibo}) => {
+    console.log('amiibo', amiibo)
     const [threeDsFeat, setThreeDsFeat] = useState([])
     const [switchFeat, setSwitchFeat] = useState([])
     const [wiiUFeat, setWiiUFeat] = useState([])
@@ -35,7 +36,7 @@ const AmiiboDetails = ({amiibo}) => {
     }
 
     useEffect(() => {
-        getAmiiboFeatures(amiibo.name)
+        getAmiiboFeatures(amiibo.character)
     }, [])
 
     return (
