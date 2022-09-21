@@ -46,6 +46,13 @@ const App = () => {
     console.log('favcoite list: ', favoriteList)
   }
 
+  const removeFromFavorites = (amiiboTail) => {
+    const index = favoriteList.findIndex(amiibo => amiibo.tail === amiiboTail)
+    console.log('amiibo index', index)
+    favoriteList.splice(index, 1)
+    console.log('update', favoriteList)
+  }
+
   useEffect(() => {
     getAmiiboData()
   }, [])
@@ -57,7 +64,7 @@ const App = () => {
   return (
     <div>
       <Header/>
-      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites}/>}/>
+      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
       <Route exact path="/amiiWho/:amiiboTail" render={({match}) => {
           const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
           return <AmiiboDetails amiibo={foundAmiibo}/>}}/>

@@ -4,14 +4,15 @@ import unFavoriteIcon from "../Images/blackStar.png"
 import favoriteIcon from "../Images/yellowStar.png"
 import { NavLink } from 'react-router-dom';
 
-const Amiibo = ({image, name, tail, favorited, addToFavorites}) => {
-    const [favoritedAmiibo, setFavoritedAmiibo] = useState(favorited)
+const Amiibo = ({image, name, tail, addToFavorites, removeFromFavorites}) => {
+    const [favoritedAmiibo, setFavoritedAmiibo] = useState(false)
     const addFavorites = () => {
-        if (!favorited) {
+        if (!favoritedAmiibo) {
             setFavoritedAmiibo(true)
             addToFavorites(tail)
         } else {
             setFavoritedAmiibo(false)
+            removeFromFavorites(tail)
         }
     }
     return (
@@ -21,7 +22,7 @@ const Amiibo = ({image, name, tail, favorited, addToFavorites}) => {
             </NavLink>
             <div className="amiibo-name-fav">
                 <p>{name}</p>
-                {favoritedAmiibo ? <img className="star" src={favoriteIcon} alt={favoriteIcon}/> : <img className="star" src={unFavoriteIcon} alt={unFavoriteIcon} onClick={() => addFavorites()}/>}
+                {favoritedAmiibo ? <img className="star" src={favoriteIcon} alt={favoriteIcon} onClick={() => addFavorites()}/> : <img className="star" src={unFavoriteIcon} alt={unFavoriteIcon} onClick={() => addFavorites()}/>}
             </div>
         </div>
     )
