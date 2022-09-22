@@ -3,7 +3,6 @@ import UsersAmiibo from "../UsersAmiibo/UsersAmiibo";
 import "./UserCollection.css"
 
 const UserCollection = ({favoriteList, removeFromFavorites}) => {
-    console.log('favorites', favoriteList)
     const amiiboFigures = favoriteList.map(amiibo => {
         const {image, name, tail} = amiibo
         return <UsersAmiibo
