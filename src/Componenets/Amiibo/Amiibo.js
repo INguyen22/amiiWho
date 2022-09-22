@@ -17,7 +17,7 @@ const Amiibo = ({image, name, tail, addToFavorites, removeFromFavorites}) => {
     }
     return (
         <div>
-            <NavLink to={`/amiiWho/${tail}`}>
+            <NavLink to={`/amiiWho/amiiboDetails/${tail}`}>
                 <img className="amiibo-image" src={image} alt={name}/>
             </NavLink>
             <div className="amiibo-name-fav">

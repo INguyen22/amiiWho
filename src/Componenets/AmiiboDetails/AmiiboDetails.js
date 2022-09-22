@@ -4,7 +4,6 @@ import waddleDee from "../Images/waddleDee.png"
 import { Link } from 'react-router-dom'
 
 const AmiiboDetails = ({amiibo}) => {
-    console.log('amiibo', amiibo)
     const [threeDsFeat, setThreeDsFeat] = useState([])
     const [switchFeat, setSwitchFeat] = useState([])
     const [wiiUFeat, setWiiUFeat] = useState([])
@@ -14,7 +13,6 @@ const AmiiboDetails = ({amiibo}) => {
         .then(res => res.json())
         .then(data => {
             const specificAmiiboFeats = data.amiibo.find(character => character.tail === amiibo.tail)
-            // console.log('specidic amiibo feats: ', specificAmiiboFeats)
             setThreeDsFeat(specificAmiiboFeats.games3DS)
             setSwitchFeat(specificAmiiboFeats.gamesSwitch)
             setWiiUFeat(specificAmiiboFeats.gamesWiiU)
@@ -28,7 +26,6 @@ const AmiiboDetails = ({amiibo}) => {
 
     const features = (console) => {
         const feats = console.map(feat => {
-            // console.log('use', console.log(threeDsFeat))
             const {amiiboUsage, gameName} = feat
             return <li key={Math.random()}> {amiiboUsage[0].Usage} in {gameName}</li>
         })
@@ -42,9 +39,7 @@ const AmiiboDetails = ({amiibo}) => {
     return (
         <div className="amiibo-details-container">
             <div className="back-button-container">
-                {/* <button className="back-button"> */}
-                    <Link to={`/`} className="link"> Go Back Home<img className="waddle-icon"  src={waddleDee} alt="back icon"/></Link>
-                {/* </button> */}
+                <Link to={`/`} className="link"> Go Back Home<img className="waddle-icon"  src={waddleDee} alt="back icon"/></Link>
             </div>
         <div className="amiibo-details">
             <div>

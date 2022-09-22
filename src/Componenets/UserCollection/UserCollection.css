@@ -4,4 +4,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
 }

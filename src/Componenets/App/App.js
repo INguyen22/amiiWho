@@ -41,15 +41,18 @@ const App = () => {
     const favoriteAmiibo = amiibos.find(amiibo => amiibo.tail === amiiboTail)
     // setFavoriteList([...favoriteList, favoriteAmiibo])
     if(!favoriteList.includes(favoriteAmiibo)) {
-      favoriteList.push(favoriteAmiibo)
+      // favoriteList.push(favoriteAmiibo)
+      setFavoriteList([...favoriteList, favoriteAmiibo])
     }
-    console.log('favcoite list: ', favoriteList)
+    // console.log('favcoite list: ', favoriteList)
   }
 
   const removeFromFavorites = (amiiboTail) => {
-    const index = favoriteList.findIndex(amiibo => amiibo.tail === amiiboTail)
-    console.log('amiibo index', index)
-    favoriteList.splice(index, 1)
+    // const index = favoriteList.findIndex(amiibo => amiibo.tail === amiiboTail)
+    const filteredAmiibos = favoriteList.filter(amiibo => amiibo.tail !== amiiboTail)
+    // console.log('amiibo index', index)
+    // favoriteList.splice(index, 1)
+    setFavoriteList(filteredAmiibos)
     console.log('update', favoriteList)
   }
 
@@ -57,18 +60,18 @@ const App = () => {
     getAmiiboData()
   }, [])
 
-  useEffect(() => {
-    setFavoriteList(favoriteList)
-  }, [favoriteList])
+  // useEffect(() => {
+  //   setFavoriteList(favoriteList)
+  // }, [favoriteList])
 
   return (
     <div>
       <Header/>
-      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
-      <Route exact path="/amiiWho/:amiiboTail" render={({match}) => {
+      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filter={filter} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
+      <Route exact path="/amiiWho/amiiboDetails/:amiiboTail" render={({match}) => {
           const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
           return <AmiiboDetails amiibo={foundAmiibo}/>}}/>
-      <Route exact path="/amiiWho/myCollection" render={() => <UserCollection favoriteList={favoriteList}/>}/>
+      <Route exact path="/amiiWho/myCollection" render={() => <UserCollection favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
       <Route exact path="/amiiWho/AboutUs" render={() => <AboutUs/>}/>
     </div>
   )

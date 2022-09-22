@@ -1,10 +1,22 @@
 import React from "react";
+import UsersAmiibo from "../UsersAmiibo/UsersAmiibo";
 import "./UserCollection.css"
 
-const UserCollection = ({favoriteList}) => {
+const UserCollection = ({favoriteList, removeFromFavorites}) => {
+    console.log('favorites', favoriteList)
+    const amiiboFigures = favoriteList.map(amiibo => {
+        const {image, name, tail} = amiibo
+        return <UsersAmiibo
+            key={image}
+            image={image}
+            name={name}
+            tail={tail}
+            removeFromFavorites={removeFromFavorites}
+        />
+    })
     return (
         <div className="user-amiibo-collection-container">
-            <h1>hello?frfrfrfrfrf</h1>
+            {amiiboFigures}
         </div>
     )
 }
