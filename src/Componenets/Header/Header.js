@@ -9,7 +9,7 @@ const Header = () => {
             <nav>
                 <button className="nav-button"><NavLink to="/" className="nav">Home</NavLink></button>
                 <button className="nav-button"><NavLink to="/amiiWho/myCollection" className="nav">View My Collection</NavLink></button>
-                <button className="nav-button"><NavLink to="/amiiWho/aboutUs" className="nav">About Us</NavLink></button>
+                <button className="nav-button"><NavLink to="/amiiWho/AboutUs" className="nav">About Us</NavLink></button>
             </nav>
         </div>
     )
