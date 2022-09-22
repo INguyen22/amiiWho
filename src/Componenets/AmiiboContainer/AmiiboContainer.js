@@ -22,6 +22,7 @@ const AmiiboContainer = ({amiiboData, amiiboSeries, filter, favoriteList, addToF
     return (
         <div className="amiibo-container">
             <Form uniqueSeries={amiiboSeries} filter={filter}/>
+            {amiiboData.length === 0 && <h2>Sorry there are no characters with that name or series, please try again🥲</h2>}
             {amiiboFigures}
         </div>
     )

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
     return (
         <div className="header">
-            <h1>AmiiWho?</h1>
+            <NavLink to="/" className="header-link"><h1>AmiiWho?</h1></NavLink>
             <nav>
                 <button className="nav-button"><NavLink to="/" className="nav">Home</NavLink></button>
                 <button className="nav-button"><NavLink to="/amiiWho/myCollection" className="nav">View My Collection</NavLink></button>

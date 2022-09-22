@@ -4,16 +4,26 @@ import AmiiboContainer from "../AmiiboContainer/AmiiboContainer";
 import AmiiboDetails from "../AmiiboDetails/AmiiboDetails";
 import UserCollection from "../UserCollection/UserCollection";
 import AboutUs from "../AboutUs/AboutUs";
-import { Route } from 'react-router-dom';
+import Error from "../Error/Error";
+import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
   const [amiibos, setAmiibos] = useState([])
   const [amiiboSeries, setAmiiboSeries] = useState([])
   const [favoriteList, setFavoriteList] = useState([])
+  const [error, setError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const getAmiiboData = () => {
     fetch('https://www.amiiboapi.com/api/amiibo/')
-    .then(res => res.json())
+    .then(res => {
+      if(!res.ok) {
+        throw new Error()
+      } else {
+        setError(false)
+        return res.json()
+      }
+    })
     .then(data => {
       // console.log(data.amiibo)
       const series = data.amiibo.map(amiibo => amiibo.amiiboSeries)
@@ -22,6 +32,10 @@ const App = () => {
       })
       setAmiiboSeries(uniqueSeries)
       setAmiibos(data.amiibo)
+    })
+    .catch(error => {
+      setError(true)
+      setErrorMessage('Error 404. The data could not be fetched. Please reload and try again')
     })
   }
 
@@ -62,12 +76,16 @@ const App = () => {
   return (
     <div>
       <Header/>
-      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} amiiboSeries={amiiboSeries} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
-      <Route exact path="/amiiWho/amiiboDetails/:amiiboTail" render={({match}) => {
-          const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
-          return <AmiiboDetails amiibo={foundAmiibo}/>}}/>
-      <Route exact path="/amiiWho/myCollection" render={() => <UserCollection favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
-      <Route exact path="/amiiWho/AboutUs" render={() => <AboutUs/>}/>
+      <Switch>
+      {error && <h3 className="error-message">{errorMessage}</h3>}
+        <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} amiiboSeries={amiiboSeries} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
+        <Route exact path="/amiiWho/amiiboDetails/:amiiboTail" render={({match}) => {
+            const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
+            return <AmiiboDetails amiibo={foundAmiibo}/>}}/>
+        <Route exact path="/amiiWho/myCollection" render={() => <UserCollection favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
+        <Route exact path="/amiiWho/AboutUs" render={() => <AboutUs/>}/>
+        <Route render={() => <Error/>}/>
+      </Switch>
     </div>
   )
 }
