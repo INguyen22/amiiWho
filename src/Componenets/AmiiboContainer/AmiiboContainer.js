@@ -3,11 +3,7 @@ import "./AmiiboContainer.css"
 import Amiibo from "../Amiibo/Amiibo";
 import Form from "../Form/Form";
 
-const AmiiboContainer = ({amiiboData, filter, favoriteList, addToFavorites, removeFromFavorites}) => {
-    const series = amiiboData.map(amiibo => amiibo.amiiboSeries)
-    const uniqueSeries = series.filter((currentSeries, index) => {
-        return series.indexOf(currentSeries) === index
-    })
+const AmiiboContainer = ({amiiboData, amiiboSeries, filter, favoriteList, addToFavorites, removeFromFavorites}) => {
 
     const amiiboFigures = amiiboData.map(amiibo => {
         const {image, name, tail} = amiibo
@@ -25,7 +21,7 @@ const AmiiboContainer = ({amiiboData, filter, favoriteList, addToFavorites, remo
     })
     return (
         <div className="amiibo-container">
-            <Form uniqueSeries={uniqueSeries} filter={filter}/>
+            <Form uniqueSeries={amiiboSeries} filter={filter}/>
             {amiiboFigures}
         </div>
     )

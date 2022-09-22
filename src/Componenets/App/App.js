@@ -8,13 +8,19 @@ import { Route } from 'react-router-dom';
 
 const App = () => {
   const [amiibos, setAmiibos] = useState([])
+  const [amiiboSeries, setAmiiboSeries] = useState([])
   const [favoriteList, setFavoriteList] = useState([])
 
   const getAmiiboData = () => {
     fetch('https://www.amiiboapi.com/api/amiibo/')
     .then(res => res.json())
     .then(data => {
-      console.log(data.amiibo)
+      // console.log(data.amiibo)
+      const series = data.amiibo.map(amiibo => amiibo.amiiboSeries)
+      const uniqueSeries = series.filter((currentSeries, index) => {
+          return series.indexOf(currentSeries) === index
+      })
+      setAmiiboSeries(uniqueSeries)
       setAmiibos(data.amiibo)
     })
   }
@@ -56,7 +62,7 @@ const App = () => {
   return (
     <div>
       <Header/>
-      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
+      <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} amiiboSeries={amiiboSeries} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
       <Route exact path="/amiiWho/amiiboDetails/:amiiboTail" render={({match}) => {
           const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
           return <AmiiboDetails amiibo={foundAmiibo}/>}}/>
