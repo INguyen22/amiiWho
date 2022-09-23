@@ -7,7 +7,6 @@ const AmiiboContainer = ({amiiboData, amiiboSeries, filter, favoriteList, addToF
 
     const amiiboFigures = amiiboData.map(amiibo => {
         const {image, name, tail} = amiibo
-        // console.log('rendering', amiibo)
        const isFavorited = Boolean(favoriteList.find(amiibo => amiibo.tail === tail))
         return <Amiibo
             key={image}
@@ -23,7 +22,9 @@ const AmiiboContainer = ({amiiboData, amiiboSeries, filter, favoriteList, addToF
         <div className="amiibo-container">
             <Form uniqueSeries={amiiboSeries} filter={filter}/>
             {amiiboData.length === 0 && <h2>Sorry there are no characters with that name or series, please try again🥲</h2>}
-            {amiiboFigures}
+            <div className="figures">
+                {amiiboFigures}
+            </div>
         </div>
     )
 }
