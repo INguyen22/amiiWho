@@ -21,8 +21,8 @@ const Amiibo = ({image, name, tail, isFavorited, addToFavorites, removeFromFavor
                 <img className="amiibo-image" src={image} alt={name}/>
             </NavLink>
             <div className="amiibo-name-fav">
-                <p>{name}</p>
-                {isFavorited ? <img className="star" src={favoriteIcon} alt={favoriteIcon} onClick={() => addFavorites()}/> : <img className="star" src={unFavoriteIcon} alt={unFavoriteIcon} onClick={() => addFavorites()}/>}
+                <p className="amiibo-name">{name}</p>
+                {isFavorited ? <img className="star" src={favoriteIcon} alt="unfavorite icon" onClick={() => addFavorites()}/> : <img className="star" src={unFavoriteIcon} alt="favorite icon" onClick={() => addFavorites()}/>}
             </div>
         </div>
     )

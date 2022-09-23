@@ -1,0 +1,266 @@
+{
+    "amiiboSeries": "Kirby",
+    "character": "King Dedede",
+    "gameSeries": "Kirby",
+    "games3DS": [
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Unlock a costume resembling this character",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "00040000001B5400",
+                "00040000001B5300"
+            ],
+            "gameName": "BYE-BYE BOXBOY!"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Unlock figure in the pose of the character (requires Chibi-Robo amiibo)",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "0004000000163000",
+                "0004000000162F00"
+            ],
+            "gameName": "Chibi-Robo! Zip Lash"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Receive amiibo-exclusive cosmetic gear based on the character",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "00040000001C2100",
+                "00040000001C2000"
+            ],
+            "gameName": "Kirby Battle Royale"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Give Kirby a Copy ability based on the character's abilities and a health item",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "0004000000189600",
+                "0004000000183600",
+                "0004000000189800"
+            ],
+            "gameName": "Kirby: Planet Robobot"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Build a statue in the plaza that plays music",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "0004000000196F00"
+            ],
+            "gameName": "Kirby's Blowout Blast"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Equip a power-up hat matching the character",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "00040000001D1E00",
+                "00040000001D1F00"
+            ],
+            "gameName": "Kirby's Extra Epic Yarn"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Unlock a character-based puzzle",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "0004000000187E00"
+            ],
+            "gameName": "Picross 3D Round 2"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Unlock a Kirby pattern",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "00040000001C2500"
+            ],
+            "gameName": "Style Savvy: Styling Star"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Battle and train up a computer-controlled Figure Player of the character",
+                    "write": true
+                }
+            ],
+            "gameID": [
+                "00040000000EE000",
+                "00040000000EDF00"
+            ],
+            "gameName": "Super Smash Bros. for Nintendo 3DS"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Receive 20 Fragments",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "00040000001AB900",
+                "00040000001AB800"
+            ],
+            "gameName": "Team Kirby Clash Deluxe"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Unlock a character-based Yoshi yarn pattern",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "00040000001A4200",
+                "00040000001A4100",
+                "00040000001B6C00",
+                "00040000001B6D00"
+            ],
+            "gameName": "Yoshi's Woolly World"
+        }
+    ],
+    "gamesSwitch": [
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Receive star coins and a boost item",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "01004D300C5AE000"
+            ],
+            "gameName": "Kirby and the Forgotten Land"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Receive two Picture Pieces, a Maxim Tomato, and two Point Stars",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "01007E3006DDA000"
+            ],
+            "gameName": "Kirby Star Allies"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Receive 20 Fragments",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "01003FB00C5A8000"
+            ],
+            "gameName": "Super Kirby Clash"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Battle and train up a computer-controlled Figure Player of the character",
+                    "write": true
+                }
+            ],
+            "gameID": [
+                "01006A800016E000"
+            ],
+            "gameName": "Super Smash Bros. Ultimate"
+        }
+    ],
+    "gamesWiiU": [
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Give Kirby a character-based power-up, once a day per character",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "00050000101ABC00",
+                "0005000010188B00"
+            ],
+            "gameName": "Kirby and the Rainbow Curse"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Unlock a character-based Mystery Mushroom costume",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "000500001018DD00",
+                "000500001018DC00",
+                "000500001018DB00"
+            ],
+            "gameName": "Super Mario Maker"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Battle and train up a computer-controlled Figure Player of the character",
+                    "write": true
+                }
+            ],
+            "gameID": [
+                "0005000010145000",
+                "0005000010144F00",
+                "0005000010110E00"
+            ],
+            "gameName": "Super Smash Bros. for Wii U"
+        },
+        {
+            "amiiboUsage": [
+                {
+                    "Usage": "Unlock a character-based Yoshi yarn pattern",
+                    "write": false
+                }
+            ],
+            "gameID": [
+                "0005000010131F00"
+            ],
+            "gameName": "Yoshi's Woolly World"
+        }
+    ],
+    "head": "1f020000",
+    "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_1f020000-02560c02.png",
+    "name": "King Dedede",
+    "release": {
+        "au": "2016-06-11",
+        "eu": "2016-06-10",
+        "jp": "2016-04-28",
+        "na": "2016-06-10"
+    },
+    "tail": "02560c02",
+    "type": "Figure"
+}

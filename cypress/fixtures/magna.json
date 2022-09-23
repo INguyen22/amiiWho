@@ -1,0 +1,48 @@
+{
+	"amiibo": [
+		{
+			"amiiboSeries": "Monster Hunter Rise",
+			"character": "Magnamalo",
+			"gameSeries": "Monster Hunter",
+			"games3DS": [],
+			"gamesSwitch": [
+				{
+					"amiiboUsage": [
+						{
+							"Usage": "Unlock special layered armor / Enter daily lottery for a variety of useful items",
+							"write": false
+						}
+					],
+					"gameID": [
+						"0100B04011742000"
+					],
+					"gameName": "Monster Hunter Rise"
+				},
+				{
+					"amiiboUsage": [
+						{
+							"Usage": "Unlock the Hunter Sticker Set / Have Tsukino read your fortune and receive a random item",
+							"write": false
+						}
+					],
+					"gameID": [
+						"0100E21011446000"
+					],
+					"gameName": "Monster Hunter Stories 2: Wings of Ruin"
+				}
+			],
+			"gamesWiiU": [],
+			"head": "35080000",
+			"image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_35080000-040f1802.png",
+			"name": "Magnamalo",
+			"release": {
+				"au": "2021-03-26",
+				"eu": "2021-03-26",
+				"jp": "2021-03-26",
+				"na": "2021-03-26"
+			},
+			"tail": "040f1802",
+			"type": "Figure"
+		}
+	]
+}

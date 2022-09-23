@@ -25,7 +25,7 @@ const App = () => {
       }
     })
     .then(data => {
-      // console.log(data.amiibo)
+      console.log(data.amiibo)
       const series = data.amiibo.map(amiibo => amiibo.amiiboSeries)
       const uniqueSeries = series.filter((currentSeries, index) => {
           return series.indexOf(currentSeries) === index
