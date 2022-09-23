@@ -25,7 +25,7 @@ const App = () => {
       }
     })
     .then(data => {
-      // console.log(data.amiibo)
+      console.log(data.amiibo)
       const series = data.amiibo.map(amiibo => amiibo.amiiboSeries)
       const uniqueSeries = series.filter((currentSeries, index) => {
           return series.indexOf(currentSeries) === index
@@ -71,6 +71,7 @@ const App = () => {
 
   useEffect(() => {
     getAmiiboData()
+    // console.log('shalom')
   }, [])
 
   return (
@@ -80,6 +81,7 @@ const App = () => {
       {error && <h3 className="error-message">{errorMessage}</h3>}
         <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} amiiboSeries={amiiboSeries} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
         <Route exact path="/amiiWho/amiiboDetails/:amiiboTail" render={({match}) => {
+          // console.log('yello')
             const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
             return <AmiiboDetails amiibo={foundAmiibo}/>}}/>
         <Route exact path="/amiiWho/myCollection" render={() => <UserCollection favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>

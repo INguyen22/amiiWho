@@ -1,0 +1,50 @@
+{
+    "amiibo": [{
+          "amiiboSeries": "Kirby",
+          "character": "King Dedede",
+          "gameSeries": "Kirby",
+          "head": "1f020000",
+          "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_1f020000-02560c02.png",
+          "name": "King Dedede",
+          "release": {
+              "au": "2016-06-11",
+              "eu": "2016-06-10",
+              "jp": "2016-04-28",
+              "na": "2016-06-10"
+          },
+          "tail": "02560c02",
+          "type": "Figure"
+      },
+      {
+          "amiiboSeries": "Super Smash Bros.",
+          "character": "Ness",
+          "gameSeries": "Earthbound",
+          "head": "22800000",
+          "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_22800000-002c0002.png",
+          "name": "Ness",
+          "release": {
+              "au": "2015-04-25",
+              "eu": "2015-04-24",
+              "jp": "2015-04-29",
+              "na": "2015-05-29"
+          },
+          "tail": "002c0002",
+          "type": "Figure"
+      },
+      {
+          "amiiboSeries": "Monster Hunter Rise",
+          "character": "Magnamalo",
+          "gameSeries": "Monster Hunter",
+          "head": "35080000",
+          "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_35080000-040f1802.png",
+          "name": "Magnamalo",
+          "release": {
+              "au": "2021-03-26",
+              "eu": "2021-03-26",
+              "jp": "2021-03-26",
+              "na": "2021-03-26"
+          },
+          "tail": "040f1802",
+          "type": "Figure"
+      }]
+  }
