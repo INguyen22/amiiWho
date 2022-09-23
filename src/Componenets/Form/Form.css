@@ -1,7 +1,8 @@
 .form-container {
     display: flex;
     justify-content: flex-end;
-    width: 100vw;
+    width: 97vw;
+    padding-top: 15px;
 }
 
 form {

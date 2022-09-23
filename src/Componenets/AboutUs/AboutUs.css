@@ -4,6 +4,11 @@
     align-items: flex-end;
 }
 
-p, h2 {
+h2 {
     padding: 10px;
+}
+
+p {
+    padding: 10px;
+    font-size: 23px;
 }
