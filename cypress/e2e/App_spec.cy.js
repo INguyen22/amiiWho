@@ -1,7 +1,7 @@
 describe('App', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://www.amiiboapi.com/api/amiibo/', {fixture: 'amiiboData'})
-    .visit("http://localhost:3000/").wait(2000)
+    cy.visit("http://localhost:3000/").wait(2000)
   })
   it('should have a header', () => {
     cy.get('h1').contains("AmiiWho?")
@@ -73,5 +73,47 @@ describe('App', () => {
     .get('.star').first().should('have.attr', 'alt').should('include', "favorite icon")
     .get('.star').first().click()
     .get('.star').first().should('have.attr', 'src').should('include', '/static/media/blackStar.48df4f26962ca69c969f.png')
+  })
+  it('should be able to see favorited amiibo in their collection', () => {
+    cy.get('.star').last().click()
+    cy.get('#myCollection').click()
+    .get('img').should('have.attr', 'src').should('include',"https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_35080000-040f1802.png")
+    .url().should('eq', 'http://localhost:3000/amiiWho/myCollection')
+  })
+  it('should be able to delete an amiibo from their collection', () => {
+    cy.get('.star').last().click()
+    cy.get('#myCollection').click()
+    .get('.trash-icon').click()
+    .get('img').should('have.length', 0)
+  })
+  it('should be able to see an about us page', () => {
+    cy.get('#aboutUs').click()
+    .get('h2').contains('Our Purpose')
+    .get('p').contains("Did you ever want to figure out what cool features your amiibos unlock in other games? Well look no further cause AmiiWho is your one stop place for all your questions! Find your the amiibo you're looking for and see what specific console/games your amiibo unlocks cool features in. Don't want to look for them again in the future? Just add them to your collection by favoriting them and you can see all your saved amiibos all in one place.")
+    .get('.blathers').should('have.attr', 'src').should('include',"/static/media/blathers.eece80d1bbde3181d61c.png")
+    .get('.egad').should('have.attr', 'src').should('include',"/static/media/Egad.02f36b1647c3ae9ca2f8.png")
+  })
+  it('should see an error page when the url is wrong', () => {
+    cy.visit('http://localhost:3000/boo')
+    .get('h2').contains("Oh no...looks like you need help. Click me and i'll take you back home hehehehe ")
+    .get('img').should('have.attr', 'src').should('include',"/static/media/merchant.27874e453d8a8f60e417.png")
+  })
+  it('should be able to go back to homepage after getting error', () => {
+    cy.visit('http://localhost:3000/boo')
+    .get('img').click()
+    .get('h1').contains("AmiiWho?")
+  })
+  it('should be able to search amiibo by name', () => {
+    cy.get('input[name="amiiboName"]').type('King Dedede').should('have.value', 'King Dedede')
+    .get('img').should('have.attr', 'src').should('include',"https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_1f020000-02560c02.png")
+  })
+  it('should be able to search by amiibo category', () => {
+    cy.get('select[name="amiiboSeries"]').select('Kirby').should('have.value', 'Kirby')
+    .get('img').should('have.attr', 'src').should('include',"https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_1f020000-02560c02.png")
+  })
+  it('should be able to see an error if no amiibo matches the search criterias ', () => {
+    cy.get('input[name="amiiboName"]').type('King Dedede').should('have.value', 'King Dedede')
+    cy.get('select[name="amiiboSeries"]').select('Monster Hunter Rise').should('have.value', 'Monster Hunter Rise')
+    .get('h2').contains("Sorry there are no characters with that name or series, please try again🥲")
   })
 })
