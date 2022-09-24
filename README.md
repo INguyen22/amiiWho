@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+## Introduction
+  - This project was a solo project used to challenge students in Module 3 working with React, React Router, and Cypress.
+  - This web application is for those who collect/casully purchase amiibos and wnat to know what features those amiibos can unlock in other games.
+  - In this web application, a user can see a list of all the amiibos nintendo currently has available
+  - A user can filter the amiibos by name and or series
+  - A user can click on an amiibo and see what features it can unlock in different games and what consoles those games are on
+  - A user can favorite an amiibo and see it it their collection
+  - A user can delete an amiibo from their collection
+ 
+  
+## Setup
+Copy, paste, and run this code-block in your terminal to checkout my site 
+ ```
+git clone git@github.com:INguyen22/amiiWho.git
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Application in Action
+![Sep-24-2022 14-56-28](https://user-images.githubusercontent.com/100492419/192118546-c0318dfd-0c30-42d4-8bbe-b789293b5c36.gif)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technologies
+  - React
+  - React Router
+  - VSCode
+  - Cypress
+  - Webpack
 
-### `npm start`
+## Illustrations
+<img width="1427" alt="Screen Shot 2022-09-24 at 2 45 30 PM" src="https://user-images.githubusercontent.com/100492419/192118232-c9240d73-a8fc-4d44-9526-1a8ee4508f00.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img width="1421" alt="Screen Shot 2022-09-24 at 2 46 04 PM" src="https://user-images.githubusercontent.com/100492419/192118249-aca5459a-d0a4-488c-a447-1df30432fe14.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img width="1209" alt="Screen Shot 2022-09-24 at 2 46 46 PM" src="https://user-images.githubusercontent.com/100492419/192118268-2e53809d-49c5-41d1-93df-a8142513c87d.png">
 
-### `npm test`
+## Goals, Challenges, and Wins
+### Goals
+- Use React and React Router to create a dynamic web application
+- Testing user flows with Cypress
+- Using React hooks instead of class componenets
+- Use asynchronous JavaScript
+- Ability for users to store/manipulate the data displayed in the application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Challenges
+- Using React hooks to create functionality
 
-### `npm run build`
+### Wins
+- Being able to create a favoriting/un-favoriting function in react
+- have favorites persist on page changes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Possible Future Extensions
+  - Ability to login with your name and being able to save amiibos to your account
+  - Have youtube videos in the amiibo details page to show off the unlockable features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Sources
+  - [MDN](http://developer.mozilla.org/en-US/)
+  - [YouTube](https://www.youtube.com/)
+  - [W3Schools](https://www.w3schools.com/)
+  
+## Contributors
+  - [[Ivy Nguyen](https://github.com/INguyen22)]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Specs
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html)
+  - The project repo can be found [here](https://github.com/INguyen22/amiiWho)
