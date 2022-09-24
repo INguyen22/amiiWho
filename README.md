@@ -17,6 +17,8 @@ git clone git@github.com:INguyen22/amiiWho.git
 ## Application in Action
 ![Sep-24-2022 14-56-28](https://user-images.githubusercontent.com/100492419/192118546-c0318dfd-0c30-42d4-8bbe-b789293b5c36.gif)
 
+## Deployment
+https://amii-pjf1hy7fk-inguyen22.vercel.app/
 
 ## Technologies
   - React
