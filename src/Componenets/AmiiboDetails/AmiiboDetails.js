@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./AmiiboDetails.css"
 import waddleDee from "../Images/waddleDee.png"
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 const AmiiboDetails = ({amiibo}) => {
     const [threeDsFeat, setThreeDsFeat] = useState([])
@@ -75,5 +76,9 @@ const AmiiboDetails = ({amiibo}) => {
         </div>
     )
 }
+
+AmiiboDetails.propTypes = {
+    amiibo: PropTypes.any.isRequired,
+  };
 
 export default AmiiboDetails

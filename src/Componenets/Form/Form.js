@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Form.css"
+import PropTypes from 'prop-types';
 
 const Form = ({uniqueSeries, filter}) => {
     const [amiiboName, setAmiiboName] = useState("")
@@ -41,3 +42,8 @@ const Form = ({uniqueSeries, filter}) => {
 }
 
 export default Form
+
+Form.propTypes = {
+    uniqueSeries: PropTypes.arrayOf(PropTypes.string),
+    filter: PropTypes.func.isRequired
+  };

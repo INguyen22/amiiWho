@@ -1,6 +1,7 @@
 import React from "react";
 import UsersAmiibo from "../UsersAmiibo/UsersAmiibo";
 import "./UserCollection.css"
+import PropTypes from 'prop-types';
 
 const UserCollection = ({favoriteList, removeFromFavorites}) => {
     const amiiboFigures = favoriteList.map(amiibo => {
@@ -21,3 +22,8 @@ const UserCollection = ({favoriteList, removeFromFavorites}) => {
 }
 
 export default UserCollection
+
+UserCollection.propTypes = {
+    favoriteList: PropTypes.arrayOf(PropTypes.object),
+    removeFromFavorites: PropTypes.func.isRequired
+  };

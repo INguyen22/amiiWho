@@ -3,6 +3,7 @@ import "./Amiibo.css"
 import unFavoriteIcon from "../Images/blackStar.png"
 import favoriteIcon from "../Images/yellowStar.png"
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Amiibo = ({image, name, tail, isFavorited, addToFavorites, removeFromFavorites}) => {
     const addFavorites = () => {
@@ -26,3 +27,12 @@ const Amiibo = ({image, name, tail, isFavorited, addToFavorites, removeFromFavor
 }
 
 export default Amiibo
+
+Amiibo.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    tail: PropTypes.string,
+    isFavorited: PropTypes.bool,
+    addToFavorites: PropTypes.func.isRequired,
+    removeFromFavorites: PropTypes.func.isRequired,
+  };
