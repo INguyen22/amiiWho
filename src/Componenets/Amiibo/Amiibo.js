@@ -5,13 +5,10 @@ import favoriteIcon from "../Images/yellowStar.png"
 import { NavLink } from 'react-router-dom';
 
 const Amiibo = ({image, name, tail, isFavorited, addToFavorites, removeFromFavorites}) => {
-    // const [favoritedAmiibo, setFavoritedAmiibo] = useState(isFavorited)
     const addFavorites = () => {
         if (!isFavorited) {
-
             addToFavorites(tail)
         } else {
-
             removeFromFavorites(tail)
         }
     }

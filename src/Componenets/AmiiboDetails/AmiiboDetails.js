@@ -41,37 +41,37 @@ const AmiiboDetails = ({amiibo}) => {
             <div className="back-button-container">
                 <Link to={`/`} className="link"> Go Back Home<img className="waddle-icon"  src={waddleDee} alt="back icon"/></Link>
             </div>
-        <div className="amiibo-details">
-            <div>
-                <img src={amiibo.image} alt={amiibo.name}/>
-                <h2>{amiibo.name}</h2>
-                <p>Series: {amiibo.amiiboSeries}</p>
-                <p>Release Dates:</p>
-                <ul className="release-date-list">
-                    {releaseDate}
-                </ul>
+            <div className="amiibo-details">
+                <div>
+                    <img src={amiibo.image} alt={amiibo.name}/>
+                    <h2>{amiibo.name}</h2>
+                    <p>Series: {amiibo.amiiboSeries}</p>
+                    <p>Release Dates:</p>
+                    <ul className="release-date-list">
+                        {releaseDate}
+                    </ul>
+                </div>
+                <div className="amiibo-features">
+                    <div className="switch-features">
+                        <h2 className="switch-header">Switch unlockables</h2>
+                        <ul className="switch-list">
+                            {features(switchFeat)}
+                        </ul>
+                    </div>
+                    <div className="ds-features">
+                        <h2 className="ds-header">3DS unlockables</h2>
+                        <ul className="ds-list">
+                            {features(threeDsFeat)}
+                        </ul>
+                     </div>
+                    <div className="wiiU-features">
+                        <h2 className="wii-header">WiiU unlockables</h2>
+                        <ul className="wii-list">
+                            {features(wiiUFeat)}
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div className="amiibo-features">
-                <div className="ds-features">
-                    <h2 className="ds-header">3DS unlockables</h2>
-                    <ul className="ds-list">
-                        {features(threeDsFeat)}
-                    </ul>
-                </div>
-                <div className="switch-features">
-                    <h2 className="switch-header">Switch unlockables</h2>
-                    <ul className="switch-list">
-                        {features(switchFeat)}
-                    </ul>
-                </div>
-                <div className="wiiU-features">
-                    <h2 className="wii-header">WiiU unlockables</h2>
-                    <ul className="wii-list">
-                        {features(wiiUFeat)}
-                    </ul>
-                </div>
-            </div>
-        </div>
         </div>
     )
 }
