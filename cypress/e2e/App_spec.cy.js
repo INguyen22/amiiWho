@@ -114,6 +114,6 @@ describe('App', () => {
   it('should be able to see an error if no amiibo matches the search criterias ', () => {
     cy.get('input[name="amiiboName"]').type('King Dedede').should('have.value', 'King Dedede')
     cy.get('select[name="amiiboSeries"]').select('Monster Hunter Rise').should('have.value', 'Monster Hunter Rise')
-    .get('h2').contains("Sorry there are no characters with that name or series, please try again🥲")
+    .get('h2').contains("Sorry there are no characters with that name and or series, please try again🥲")
   })
 })

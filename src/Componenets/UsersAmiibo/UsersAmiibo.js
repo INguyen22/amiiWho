@@ -2,6 +2,7 @@ import React from "react";
 import trash from "../Images/Garbage-Can.png"
 import { NavLink } from 'react-router-dom';
 import "./UsersAmiibo.css"
+import PropTypes from 'prop-types';
 
 const UsersAmiibo = ({image, name, tail, removeFromFavorites}) => {
     return (
@@ -15,3 +16,10 @@ const UsersAmiibo = ({image, name, tail, removeFromFavorites}) => {
 }
 
 export default UsersAmiibo
+
+UsersAmiibo.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    tail: PropTypes.string,
+    removeFromFavorites: PropTypes.func.isRequired
+  };

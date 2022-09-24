@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./AmiiboContainer.css"
 import Amiibo from "../Amiibo/Amiibo";
 import Form from "../Form/Form";
+import PropTypes from 'prop-types';
 
 const AmiiboContainer = ({amiiboData, filterData, filterMessage, amiiboSeries, filter, favoriteList, addToFavorites, removeFromFavorites}) => {
     const amiiboFigures = amiiboData.map(amiibo => {
@@ -42,3 +43,14 @@ const AmiiboContainer = ({amiiboData, filterData, filterMessage, amiiboSeries, f
 }
 
 export default AmiiboContainer
+
+AmiiboContainer.propTypes = {
+    amiiboData: PropTypes.arrayOf(PropTypes.object),
+    filterData: PropTypes.arrayOf(PropTypes.object),
+    filterMessage: PropTypes.bool,
+    amiiboSeries: PropTypes.arrayOf(PropTypes.string),
+    filter: PropTypes.func,
+    favoriteList: PropTypes.arrayOf(PropTypes.object),
+    addToFavorites: PropTypes.func.isRequired,
+    removeFromFavorites: PropTypes.func.isRequired,
+  };
