@@ -11,12 +11,12 @@ const Form = ({uniqueSeries, filter}) => {
     })
 
     useEffect(() => {
-        filter(amiiboName, amiiboSeries)
-      }, [amiiboName])
+        filter(amiiboName)
+      }, [amiiboName, filter])
 
     useEffect(() => {
-        filter(amiiboName, amiiboSeries)
-    }, [amiiboSeries])
+        filter(amiiboSeries)
+    }, [amiiboSeries,filter])
 
     return (
         <div className="form-container">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./AmiiboContainer.css"
 import Amiibo from "../Amiibo/Amiibo";
 import Form from "../Form/Form";

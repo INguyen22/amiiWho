@@ -35,7 +35,7 @@ const AmiiboDetails = ({amiibo}) => {
 
     useEffect(() => {
         getAmiiboFeatures(amiibo.character)
-    }, [])
+    }, [amiibo.character, amiibo.getAmiiboFeatures])
 
     return (
         <div className="amiibo-details-container">
