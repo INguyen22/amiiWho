@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Amiibo.css"
 import unFavoriteIcon from "../Images/blackStar.png"
 import favoriteIcon from "../Images/yellowStar.png"

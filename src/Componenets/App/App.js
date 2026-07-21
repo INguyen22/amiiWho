@@ -15,9 +15,11 @@ const App = () => {
   const [favoriteList, setFavoriteList] = useState([])
   const [error, setError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const [amiiboName, setAmiiboName] = useState('')
+  const [amiiboSeriesSearch, setAmiiboSeriesSearch] = useState('')
 
   const getAmiiboData = () => {
-    fetch('https://www.amiiboapi.com/api/amiibo/')
+    fetch('https://amiiboapi.org/api/amiibo/')
     .then(res => {
       if(!res.ok) {
         throw new Error()
@@ -83,7 +85,7 @@ const App = () => {
       <Header/>
       <Switch>
       {error && <h3 className="error-message">{errorMessage}</h3>}
-        <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filterData={amiibosFiltered} filterMessage={filterMessage} amiiboSeries={amiiboSeries} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}/>
+        <Route exact path="/" render={() => <AmiiboContainer amiiboData={amiibos} filterData={amiibosFiltered} filterMessage={filterMessage} amiiboSeries={amiiboSeries} filter={filter} favoriteList={favoriteList} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites} amiiboName={amiiboName} setAmiiboName={setAmiiboName} amiiboSeriesSearch={amiiboSeriesSearch} setAmiiboSeriesSearch={setAmiiboSeriesSearch} />}/>
         <Route exact path="/amiiWho/amiiboDetails/:amiiboTail" render={({match}) => {
             const foundAmiibo = amiibos.find(amiibo => amiibo.tail === match.params.amiiboTail)
             return <AmiiboDetails amiibo={foundAmiibo}/>}}/>
@@ -96,3 +98,5 @@ const App = () => {
 }
 
 export default App;
+
+// changed node js version to 24
