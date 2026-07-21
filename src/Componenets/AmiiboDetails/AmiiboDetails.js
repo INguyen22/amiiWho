@@ -10,7 +10,7 @@ const AmiiboDetails = ({amiibo}) => {
     const [wiiUFeat, setWiiUFeat] = useState([])
 
     const getAmiiboFeatures = async (amiiboName) => {
-        await fetch(`https://www.amiiboapi.com/api/amiibo/?character=${amiiboName}&showusage`)
+        await fetch(`https://amiiboapi.org/api/amiibo/?character=${amiiboName}&showusage`)
         .then(res => res.json())
         .then(data => {
             const specificAmiiboFeats = data.amiibo.find(character => character.tail === amiibo.tail)

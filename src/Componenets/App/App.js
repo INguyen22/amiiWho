@@ -17,7 +17,7 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState('')
 
   const getAmiiboData = () => {
-    fetch('https://www.amiiboapi.com/api/amiibo/')
+    fetch('https://amiiboapi.org/api/amiibo/')
     .then(res => {
       if(!res.ok) {
         throw new Error()
