@@ -9,16 +9,36 @@ const AmiiboDetails = ({amiibo}) => {
     const [switchFeat, setSwitchFeat] = useState([])
     const [wiiUFeat, setWiiUFeat] = useState([])
 
-    const getAmiiboFeatures = async (amiiboName) => {
-        await fetch(`https://amiiboapi.org/api/amiibo/?character=${amiiboName}&showusage`)
-        .then(res => res.json())
-        .then(data => {
-            const specificAmiiboFeats = data.amiibo.find(character => character.tail === amiibo.tail)
-            setThreeDsFeat(specificAmiiboFeats.games3DS)
-            setSwitchFeat(specificAmiiboFeats.gamesSwitch)
-            setWiiUFeat(specificAmiiboFeats.gamesWiiU)
-        })
-    }
+    // const getAmiiboFeatures = async (amiiboName) => {
+    //     await fetch(`https://amiiboapi.org/api/amiibo/?character=${amiiboName}&showusage`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         const specificAmiiboFeats = data.amiibo.find(character => character.tail === amiibo.tail)
+    //         setThreeDsFeat(specificAmiiboFeats.games3DS)
+    //         setSwitchFeat(specificAmiiboFeats.gamesSwitch)
+    //         setWiiUFeat(specificAmiiboFeats.gamesWiiU)
+    //     })
+    // }
+
+    useEffect(() => {
+        const getAmiiboFeatures = async () => {
+        const res = await fetch(
+        `https://amiiboapi.org/api/amiibo/?character=${amiibo.character}&showusage`
+        );
+         
+        const data = await res.json();
+         
+        const specificAmiiboFeats = data.amiibo.find(
+        character => character.tail === amiibo.tail
+        );
+         
+        setThreeDsFeat(specificAmiiboFeats.games3DS);
+        setSwitchFeat(specificAmiiboFeats.gamesSwitch);
+        setWiiUFeat(specificAmiiboFeats.gamesWiiU);
+        };
+         
+        getAmiiboFeatures();
+        }, [amiibo.character, amiibo.tail]);
     
     const releaseDateKeys = Object.keys(amiibo.release)
     const releaseDate = releaseDateKeys.map(key => {
@@ -33,9 +53,9 @@ const AmiiboDetails = ({amiibo}) => {
         return feats
     }
 
-    useEffect(() => {
-        getAmiiboFeatures(amiibo.character)
-    }, [amiibo.character, amiibo.getAmiiboFeatures])
+    // useEffect(() => {
+    //     getAmiiboFeatures(amiibo.character)
+    // }, [amiibo.character])
 
     return (
         <div className="amiibo-details-container">

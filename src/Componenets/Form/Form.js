@@ -2,21 +2,24 @@ import React, { useEffect, useState } from "react";
 import "./Form.css"
 import PropTypes from 'prop-types';
 
-const Form = ({uniqueSeries, filter}) => {
-    const [amiiboName, setAmiiboName] = useState("")
-    const [amiiboSeries, setAmiiboSeries] = useState("")
+const Form = ({uniqueSeries, filter, amiiboName, setAmiiboName, amiiboSeries, setAmiiboSeries}) => {
+    // const [amiiboName, setAmiiboName] = useState("")
+    // const [amiiboSeries, setAmiiboSeries] = useState("")
 
     const seriesOptions = uniqueSeries.map(series => {
         return <option key={series} value={series}>{series}</option>
     })
 
     useEffect(() => {
-        filter(amiiboName)
-      }, [amiiboName, filter])
+        filter(amiiboName,amiiboSeries)
+        }, [amiiboName, amiiboSeries, filter])
+    // useEffect(() => {
+    //     filter(amiiboName)
+    //   }, [amiiboName, filter])
 
-    useEffect(() => {
-        filter(amiiboSeries)
-    }, [amiiboSeries,filter])
+    // useEffect(() => {
+    //     filter(amiiboSeries)
+    // }, [amiiboSeries,filter])
 
     return (
         <div className="form-container">
@@ -45,5 +48,9 @@ export default Form
 
 Form.propTypes = {
     uniqueSeries: PropTypes.arrayOf(PropTypes.string),
-    filter: PropTypes.func.isRequired
+    filter: PropTypes.func.isRequired,
+    amiiboName: PropTypes.string.isRequired,
+    setAmiiboName: PropTypes.func.isRequired,
+    amiiboSeries: PropTypes.string.isRequired,
+    setAmiiboSeries: PropTypes.func.isRequired
   };
