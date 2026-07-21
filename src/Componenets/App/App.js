@@ -96,3 +96,5 @@ const App = () => {
 }
 
 export default App;
+
+// changed node js version to 24
